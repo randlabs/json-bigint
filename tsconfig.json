@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		"alwaysStrict": true,
+		"declaration": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"inlineSourceMap": false,
+		"esModuleInterop": true,
+		"baseUrl": ".",
+		"target": "ES2020",
+		"moduleResolution": "node",
+		"strict": true,
+		"noEmitOnError": true,
+		"resolveJsonModule": true,
+		"removeComments": true,
+		"newLine": "LF",
+		"types": [ "node" ],
+		"lib": [ "ES2020" ],
+		"noUnusedLocals": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": true,
+		"strictFunctionTypes": true,
+		"allowSyntheticDefaultImports": true
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"dist",
+		"node_modules",
+		"test",
+		"rollup.config.js",
+		"**/*.spec.tsx",
+		"**/*.spec.ts",
+		"**/*.stories.tsx"
+	]
+}
