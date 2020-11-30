@@ -4,13 +4,16 @@ module.exports = {
 		"es6": true,
 		"node": true
 	},
+	"plugins": [
+		"html"
+	],
 	"globals": {
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly"
 	},
 	"overrides": [
 		{
-			"files": ["**/*.ts"],
+			"files": [ "**/*.ts" ],
 			"extends": [
 				"eslint:recommended",
 				"plugin:@typescript-eslint/eslint-recommended",
