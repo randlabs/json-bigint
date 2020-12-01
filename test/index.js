@@ -1,4 +1,4 @@
-const JSON = require("../dist");
+const JSON = require("../dist/json-bigint");
 const test = require("ava");
 
 // -----------------------------------------------------------------------------
