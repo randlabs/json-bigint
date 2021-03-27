@@ -143,7 +143,7 @@ export default class JSONBigInt {
 	// Private methods
 
 	private static convertToBigInt(obj: any, tag: string): any {
-		if (typeof obj === 'object') {
+		if (obj && typeof obj === 'object' && (!Array.isArray(obj))) {
 			const keys = Object.keys(obj);
 
 			if (keys.length == 1 && keys[0] == tag) {
