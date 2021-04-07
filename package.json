@@ -1,6 +1,6 @@
 {
 	"name": "@randlabs/json-bigint",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "JSON library with BigInt support",
 	"main": "dist/json-bigint.js",
 	"browser": "dist/json-bigint.min.js",
