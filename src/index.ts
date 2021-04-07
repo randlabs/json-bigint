@@ -143,7 +143,7 @@ export default class JSONBigInt {
 	// Private methods
 
 	private static convertToBigInt(obj: any, tag: string): any {
-		if (obj && typeof obj === 'object' && (!Array.isArray(obj))) {
+		if (obj != null && typeof obj === 'object') {
 			const keys = Object.keys(obj);
 
 			if (keys.length == 1 && keys[0] == tag) {
@@ -152,7 +152,7 @@ export default class JSONBigInt {
 
 			for (let idx = 0; idx < keys.length; idx++) {
 				const cv = JSONBigInt.convertToBigInt(obj[keys[idx]], tag);
-				if (cv) {
+				if (cv != null) {
 					obj[keys[idx]] = cv;
 				}
 			}
@@ -161,6 +161,6 @@ export default class JSONBigInt {
 	}
 
 	private static generateTag(): string {
-		return Date.now().toString() + Math.floor(Math.random() * 100000).toString();
+		return "tag" + Date.now().toString() + Math.floor(Math.random() * 100000).toString();
 	}
 }
