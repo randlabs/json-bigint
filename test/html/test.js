@@ -1,11 +1,38 @@
 window.addEventListener("load", function () {
-	const str = JSONBigInt.stringify({
+	var str, obj, elem;
+
+	str = JSONBigInt.stringify({
 		small: 4587345.2,
 		big: 3242376423784623874n
 	});
 
-	const obj = JSONBigInt.parse(str);
-
-	const elem = document.getElementById("output");
+	obj = JSONBigInt.parse(str);
+	elem = document.getElementById("bigint_test");
 	elem.innerText = JSONBigInt.stringify(obj, null, 2);
+
+
+	str = JSONBigInt.stringify({
+		small: 4587345.2,
+		big: new BigNumber("3242376423784623874.85674785645")
+	}, {
+		bnStringify: bigNumberStringify
+	});
+
+	obj = JSONBigInt.parse(str, {
+		bnParse: bigNumberParse
+	});
+	elem = document.getElementById("bignumber_test");
+	elem.innerText = JSONBigInt.stringify(obj, null, 2, {
+		bnStringify: bigNumberStringify
+	});
 });
+
+function bigNumberParse(value) {
+	return new BigNumber(value);
+}
+
+function bigNumberStringify(value) {
+	if (!BigNumber.isBigNumber(value))
+		return undefined;
+	return value.toFixed();
+}
